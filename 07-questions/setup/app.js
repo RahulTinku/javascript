@@ -1,5 +1,5 @@
 //using selectors inside the element
-// traversing the dom
+// traversing the dom //
 
 const minusBtn = document.querySelector('.minus-icon');
 const plusBtn = document.querySelectorAll('.plus-icon');
