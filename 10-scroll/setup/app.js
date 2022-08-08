@@ -44,4 +44,24 @@ window.addEventListener('scroll', function () {
 });
 
 // ********** smooth scroll ************
+const scrollLinks = document.querySelectorAll('.scroll-link');
+
+scrollLinks.forEach(function (link) {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    const id = e.currentTarget.getAttribute('href').slice(1);
+    const element = document.getElementById(id);
+
+    //calculate the height
+    const navHeight = navBar.getBoundingClientRect().height;
+    const containerHeight = linksContainer.getBoundingClientRect().height;
+    const fixedNav = navBar.classList.contains('fixed-nav');
+    let position = element.offsetTop;
+    window.scrollTo({
+      left: 0,
+      top: position,
+    });
+    linksContainer.style.height = 0;
+  });
+});
 // select links
